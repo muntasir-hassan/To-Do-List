@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <!-- Adding Box Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Adding Tailwindcss -->
+    <link rel="stylesheet" href="build.css" />
+  </head>
+  <body>
+    <!-- Main Content -->
+    <div
+      class="bg-gradient-to-r from-indigo-950 to-indigo-500 h-screen w-full absolute top-0"
+    ></div>
+    <div
+      class="h-full w-full flex justify-center relative items-center bg-gradient-to-r from-indigo-950 to-indigo-500"
+    >
+      <div class="max-w-[400px] w-[90%] my-[50px]">
+        <!-- Headings -->
+        <div class="border-b-2 border-indigo-300">
+          <h1 class="font-bold text-start text-4xl text-white mb-1">
+            To Do List
+          </h1>
+          <p class="text-start text-slate-300 font-medium text-xl mb-3">
+            Increace Productivity
+          </p>
+        </div>
+        <!--  -->
+        <div class="mt-5 flex gap-7 max-sm:gap-3">
+          <!-- Input Field -->
+          <input
+            type="text"
+            id="input-box"
+            class="px-3 py-2 rounded-lg bg-transparent border-2 outline-none text-white font-semibold"
+            required
+            autocomplete="off"
+          />
+          <!-- Add Items --Button -->
+          <button
+            id="btn"
+            class="max-sm:px-3 border justify-between px-5 py-2 rounded-lg text-white font-medium bg-blue-950 hover:bg-indigo-100 hover:text-black hover:border-black"
+          >
+            Add
+          </button>
+        </div>
+        <!-- For List Items -->
+        <div class="mt-5">
+          <ul id="list-items" class="flex flex-col gap-2"></ul>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
