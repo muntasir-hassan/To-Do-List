@@ -2,6 +2,7 @@
 let inputBox = document.getElementById("input-box");
 let listItem = document.getElementById("list-items");
 let btn = document.getElementById("btn");
+let myDiv = document.getElementById("my-div");
 let itemNo = 1;
 
 window.onload = () => {
@@ -10,6 +11,7 @@ window.onload = () => {
       inputBox.value = localStorage.getItem(`item ${i}`);
       btn.click();
     }
+    responsiveCheck();
   }
 };
 // Adding a Event to Add Button If it Clicked It Should Add The Input to List Item
@@ -63,11 +65,12 @@ btn.addEventListener("click", () => {
 
     newLi.appendChild(newBtn);
     listItem.appendChild(newLi);
-
+    responsiveCheck();
     // Adding Functionality to Delete Btn
     newBtn.addEventListener("click", () => {
       listItem.removeChild(newLi);
       updateLocalStorage();
+      responsiveCheck();
     });
 
     // For Line Trough Effect
@@ -98,4 +101,16 @@ function updateLocalStorage() {
 // Resetting The Input Field
 function resetInputField() {
   inputBox.value = "";
+}
+
+// Responsiveness
+function responsiveCheck() {
+  let ms = document.getElementById("ms");
+  if (ms.offsetHeight > window.innerHeight) {
+    myDiv.classList.remove("h-screen");
+    myDiv.classList.add("h-full");
+  } else {
+    myDiv.classList.remove("h-full");
+    myDiv.classList.add("h-screen");
+  }
 }
