@@ -103,6 +103,13 @@ function resetInputField() {
   inputBox.value = "";
 }
 
+// Trigger a New Task Adding Using Enter Key
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    btn.click();
+  }
+});
+
 // Responsiveness
 function responsiveCheck() {
   let ms = document.getElementById("ms");
